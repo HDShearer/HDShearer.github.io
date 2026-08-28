@@ -1,0 +1,238 @@
+/*CSS Variables*/
+:root {
+  --clr-primary: hsl(210, 30%, 18%);
+  --clr-primary75: hsla(210, 30%, 18%, 0.75);
+  --clr-secondary: hsl(210, 20%, 92%);
+  --clr-accent: hsl(32, 65%, 55%);
+  --clr-neutral: hsl(210, 20%, 90%);  
+  --clr-neutral-alt: hsl(210, 15%, 24%);
+  --clr-neutral75: hsla(210, 15%, 99%, 0.98);
+  --clr-black: hsl(210, 25%, 8%);
+  --clr-black75: hsla(210, 25%, 8%, 0.75);
+  --clr-black50: hsla(210, 25%, 8%, 0.5);
+  --fs-h1: 1.802rem;
+  --fs-h2: 1.602rem;
+  --fs-h3: 1.424rem;
+  --fs-h4: 1.266rem;
+  --fs-h5: 1.125rem;
+  --fs-h6: 1rem;
+  --fs-small: 0.889rem;
+}
+
+/* Global settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, sans-serif;
+    list-style: none;
+}
+
+h1 { font-size: var(--fs-h1); font-weight: 700; }
+h2 { font-size: var(--fs-h2); font-weight: 600; }
+h3 { font-size: var(--fs-h3); font-weight: 600; }
+h4 { font-size: var(--fs-h4); font-weight: 500; }
+h5 { font-size: var(--fs-h5); font-weight: 500; }
+h6 { font-size: var(--fs-h6); font-weight: 400; }
+
+h1, h2, h3 {
+    font-family: "Fira Code", Courier, monospace;
+    border-bottom: 2px solid var(--clr-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+pre, .hero {
+    font-family: "Fira Code", Courier, monospace;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-neutral);
+    color: var(--clr-black75);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Header Settings */
+
+header h1, nav a, nav ul, nav li {
+    background-color: var(--clr-primary);
+}
+
+nav a {
+    color: var(--clr-accent);
+    text-decoration: none;
+}
+
+nav a:hover, nav a:active {
+    color: var(--clr-accent);
+    border-bottom: 3px solid var(--clr-accent);
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral75)
+}
+
+/* Contact Box */
+
+form {
+    background-color: var(--clr-primary);
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+input, textarea {
+    width: 100%;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    border: none;
+}
+
+input {
+    line-height: 3;
+}
+
+label {
+    color: var(--clr-neutral75);
+}
+
+button {
+    background-color: var(--clr-neutral);
+    color: var(--clr-black75);
+    border-radius: 4px;
+    border: none;
+    padding: 0.5em 3em;
+    align-self: center;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--clr-accent);
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral75);
+    padding: 1rem 0;
+    align-items: center;
+    text-align: center;
+}
+
+footer a {
+    color: var(--clr-neutral75);
+}
+
+footer ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Content Wrapper */
+
+.content-wrapper {
+    width: 90%;
+    margin: 1rem auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--clr-black75);
+}
+
+/* Hero */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-black);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    padding: 1.5rem;
+    white-space: pre;
+    color: white;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    font-weight: bold;
+}
+
+.hero a, pre {
+    text-decoration: none;
+    color: white;
+    background-color: var(--clr-black);
+}
+
+.hero a:hover, .hero a:active {
+    text-decoration: underline;
+    background-color: white;
+    color: black;
+}
+
+/* Projects */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--clr-black75);
+}
+
+.project {
+    background-color: var(--clr-neutral);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px var(--clr-accent);
+    color: var(--clr-black75);
+}
+
+.project img {
+    width: 100%;
+    display: block;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.description {
+    padding: 1rem;
+    color: var(--clr-black75);
+
+}
+
+@media (min-width: 768px) {
+    .projects {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project {
+        flex: 0 1 280px;
+        max-width: 280px;
+        justify-content: center;
+    }
+} 
